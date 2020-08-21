@@ -112,7 +112,7 @@ static int file_read(URLContext *h, unsigned char *buf, int size)
     int ret;
     size = FFMIN(size, c->blocksize);
     ret = read(c->fd, buf, size);
-    prinft("read retval: %d\n", ret);
+    printf("read retval: %d\n", ret);
     if (ret == 0 && c->follow) {
         printf("EAGAIN\n");
 	return AVERROR(EAGAIN);
