@@ -1196,6 +1196,8 @@ static int open_input_file(OptionsContext *o, const char *filename)
         }
     }
 
+    avio_flush(ic->pb);
+
     if (o->start_time != AV_NOPTS_VALUE && o->start_time_eof != AV_NOPTS_VALUE) {
         av_log(NULL, AV_LOG_WARNING, "Cannot use -ss and -sseof both, using -ss for %s\n", filename);
         o->start_time_eof = AV_NOPTS_VALUE;
